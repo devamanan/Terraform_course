@@ -24,8 +24,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "terraform_state" {
-  bucket        = "my-terraform-state-bucket-2025" # REPLACE WITH YOUR BUCKET NAME
+resource "aws_s3_bucket" "terraform_state_2025" {
+  bucket        = "my-terraform-state-bucket-2025-devdevops" # REPLACE WITH YOUR BUCKET NAME
   force_destroy = true
 }
 
@@ -46,7 +46,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "terraform_state_c
 }
 
 resource "aws_dynamodb_table" "terraform_locks" {
-  name         = "terraform-state-locking"
+  name         = "terraform-state-locking-2025-devdevops"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
   attribute {
